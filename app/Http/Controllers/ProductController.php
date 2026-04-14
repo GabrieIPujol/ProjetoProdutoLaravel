@@ -23,16 +23,19 @@ class ProductController extends Controller
             'url' => $request['img_01'],
             'order' => 0
         ]);
+
         ProductImage::create([
             'product_id' => $product->id,
             'url' => $request['img_02'],
             'order' => 1
         ]);
+
         ProductImage::create([
             'product_id' => $product->id,
             'url' => $request['img_03'],
             'order' => 2
         ]);
+        $product->Tags()->sync($request['tags_id']);
         return redirect('/product');
     }
 

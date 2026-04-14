@@ -16,4 +16,8 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
+    public function Tags(){
+        return $this->belongsToMany(Tag::class);
+    }
+
 }

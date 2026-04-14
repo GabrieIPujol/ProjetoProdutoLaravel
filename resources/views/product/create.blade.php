@@ -15,6 +15,14 @@
         </select>
     </div>
     <div>
+    Tag: 
+        <select name="tags_id[]" mutiple>
+        @foreach(\App\Models\Tag::all() as $t)
+            <option value="{{$t->id}}">{{$t->name}}</option>
+        @endforeach
+        </select>
+    </div>
+    <div>   
     Imagem01: <input type="text" name="img_01">
     </div>
     <div>
